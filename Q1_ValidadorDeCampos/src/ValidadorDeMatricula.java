@@ -2,9 +2,9 @@
 
 public class ValidadorDeMatricula implements IValidador{
     public boolean valida(String valor){
-        ValidadorDeinteiro validaint = new ValidadorDeInteiro();
+        ValidadorDeInteiro validaint = new ValidadorDeInteiro();
 
-        if (!validadorInteiro.valida(valor)){
+        if (!validaint.valida(valor)){
             return false;
         }else{
             int sum = 0;
