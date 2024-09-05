@@ -1,7 +1,7 @@
 import java.util.List;
 
-public class VisualizadorDeMedia {
-    private List<Integer> valores;
+public class VisualizadorDeMedia implements Observador{
+    private FonteDeDados valores;
 
     public VisualizadorDeMedia(List<Integer> valores){
         this.valores = valores;

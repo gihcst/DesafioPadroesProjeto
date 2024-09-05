@@ -1,7 +1,7 @@
 import java.util.List;
 
-public class VisualizadorDeSomatorio {
-    private List<Integer> valores;
+public class VisualizadorDeSomatorio implements Observador {
+    private FonteDeDados valores;
 
     public VisualizadorDeSomatorio(List<Integer> valores){
         this.valores = valores;
