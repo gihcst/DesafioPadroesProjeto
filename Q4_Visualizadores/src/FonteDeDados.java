@@ -2,13 +2,14 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class FonteDeDados{
+//subject que gerencia e notifica os observadores
+public class FonteDeDados{ 
     private List<Integer> lst;
     private List<Observador> observadores;
 
     public FonteDeDados(){
         lst = new LinkedList<>();
-        observadores = new ArrayList();
+        observadores = new ArrayList<>();
     }
 
     public void adcObservador(Observador obs){
@@ -28,6 +29,7 @@ public class FonteDeDados{
     public void add(Integer value){
         if (value < 0) throw new IllegalArgumentException("Valor invalido");
         lst.add(value);
+        notificaObs();
     }
 
     public int quantidade(){

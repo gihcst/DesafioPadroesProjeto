@@ -1,25 +1,23 @@
 import java.util.List;
-
+//observador
 public class VisualizadorDeMedia implements Observador{
-    private FonteDeDados valores;
+    private FonteDeDados fonte; //observa a fonte de dados
 
-    public VisualizadorDeMedia(List<Integer> valores){
-        this.valores = valores;
-    }
-
-    public void defineValores(List<Integer> valores){
-        this.valores = valores;
-    }
-
-    public void acrescentaValor(Integer valor){
-        this.valores.add(valor);
+    public VisualizadorDeMedia(FonteDeDados fonte){
+        this.fonte = fonte;
+        fonte.adcObservador(this);
     }
 
     public void exibeMedia(){
-        double media = valores.stream()
+        List<Integer> dados = fonte.getValores();
+        double media = dados.stream()
             .mapToInt(Integer::intValue)
             .average()
             .orElse(0.0);
-        System.out.println("Media: "+media+", quantidade de elementos analisados: "+valores.size());
+        System.out.println("Media: "+media+", quantidade de elementos analisados: "+ dados.size());
+    }
+
+    public void notifica(){
+        exibeMedia();
     }
 }
