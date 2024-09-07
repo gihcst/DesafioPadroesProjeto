@@ -1,5 +1,5 @@
 public class ItemDeVenda {
-    private Componente componente;
+    private Componente componente; //tipo componente para poder criar ambos os itens, seja kit ou produto unitário.
     private int quantidade;
 
     public ItemDeVenda(Componente componente, int quantidade) {
@@ -20,7 +20,7 @@ public class ItemDeVenda {
     }
 
     @Override
-    public String toString() {
+    public String toString() { //toString para ambos os tipos de intens de venda
         if(componente instanceof Produto){
             Produto produto = (Produto) componente;
             return String.format("%d %s %d x %.2f = %.2f%n",produto.getId(), produto.getNome(), quantidade, produto.precoTotal(), getSubTotal());
@@ -31,5 +31,4 @@ public class ItemDeVenda {
             kit.getNome(), quantidade, kit.precoTotal(), getSubTotal());
         }
     }
-            
 }

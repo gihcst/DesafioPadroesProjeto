@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProdutoKit implements Componente{
+public class ProdutoKit implements Componente{ //classe compositive que possui a interface em comum com a classe folha Produto 
     private String nome;
     private List<Componente> componentes;
 

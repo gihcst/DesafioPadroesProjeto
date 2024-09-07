@@ -1,4 +1,4 @@
-public class Produto implements Componente{
+public class Produto implements Componente{ //classe folha que utiliza a interface em comum com a classe compositive
     private int id;
     private String nome;
     private double preco;
