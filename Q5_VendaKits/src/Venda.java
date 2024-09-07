@@ -33,6 +33,11 @@ public class Venda {
         itens.add(item);
     }
 
+    public void registrarVenda(ProdutoKit produto, int quantidade) {
+        ItemDeVenda item = new ItemDeVenda(produto, quantidade);
+        itens.add(item);
+    }
+
     public String emitirComprovante() {
         StringBuilder nota = new StringBuilder();
         nota.append(String.format("COMPROVANTE DE VENDA%n"));

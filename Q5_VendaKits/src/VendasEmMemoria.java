@@ -11,6 +11,8 @@ public class VendasEmMemoria implements VendasFachada{
 		produtos.add(new Produto(1, "Caneta", 1.55));
 		produtos.add(new Produto(2, "Borracha", 1.15));
 		produtos.add(new Produto(3, "Caderno", 32.99));
+		produtos.add(new Produto(4, "MochilaDoSaci", 450.00));
+		produtos.add(new Produto(5, "CadernoDoInternacionalMaiorDoSul", 500.00));
 	}
 	
 	@Override

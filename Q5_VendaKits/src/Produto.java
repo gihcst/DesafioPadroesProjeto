@@ -1,4 +1,4 @@
-public class Produto {
+public class Produto implements Componente{
     private int id;
     private String nome;
     private double preco;
@@ -17,8 +17,9 @@ public class Produto {
         return nome;
     }
 
-    public double getPreco() {
-        return preco;
+    @Override
+    public double precoTotal() {
+        return preco;    
     }
 
 }
