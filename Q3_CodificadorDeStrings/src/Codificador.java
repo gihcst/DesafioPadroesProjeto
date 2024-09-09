@@ -1,11 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public interface ICodificador {
-    String codifica(Codificador.Tipo tipo, String str);
-    String deCodifica(Codificador.Tipo tipo, String str);
-}
-
 public class Codificador implements ICodificador {
     public enum Tipo { SIMPLES, DESLOCA }
     private Map<Character, Character> tabCod;
@@ -88,43 +83,3 @@ public class Codificador implements ICodificador {
     }
 }
 
-public abstract class CodificadorDecorator implements ICodificador {
-    protected ICodificador codificador;
-
-    public CodificadorDecorator(ICodificador codificador) {
-        this.codificador = codificador;
-    }
-
-    @Override
-    public String codifica(Codificador.Tipo tipo, String str) {
-        return codificador.codifica(tipo, str);
-    }
-
-    @Override
-    public String deCodifica(Codificador.Tipo tipo, String str) {
-        return codificador.deCodifica(tipo, str);
-    }
-}
-
-public class ReversoCodificadorDecorator extends CodificadorDecorator {
-
-    public ReversoCodificadorDecorator(ICodificador codificador) {
-        super(codificador);
-    }
-
-    @Override
-    public String codifica(Codificador.Tipo tipo, String str) {
-        // Codifica usando o comportamento original
-        String res = super.codifica(tipo, str);
-        // Adiciona a funcionalidade de inverter a string
-        return new StringBuilder(res).reverse().toString();
-    }
-
-    @Override
-    public String deCodifica(Codificador.Tipo tipo, String str) {
-        // Primeiro, reverte a string
-        String res = new StringBuilder(str).reverse().toString();
-        // Decodifica usando o comportamento original
-        return super.deCodifica(tipo, res);
-    }
-}
