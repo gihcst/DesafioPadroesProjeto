@@ -1,10 +1,17 @@
 public class App {
     public static void main(String[] args) {
-        Dado d6 = new Dado(6);
-        Dado d20 = new Dado(20);
-        d6.rolar();
-        d20.rolar();
-        System.out.println("D6: " + d6.getValor());
-        System.out.println("D20: " + d20.getValor());
+        Dado dadoSimples = new DadoConcreto(6);
+        Dado dadoComHistorico = new DadoComHistorico(new DadoConcreto(6));
+
+        // Lançando dado simples
+        dadoSimples.lançar();
+        System.out.println("Dado Simples: " + dadoSimples.getValor());
+
+        // Lançando dado com histórico várias vezes
+        dadoComHistorico.lançar();
+        dadoComHistorico.lançar();
+        dadoComHistorico.lançar();
+        System.out.println("Dado com Histórico: " + dadoComHistorico.getValor());
+        System.out.println("Histórico: " + ((DadoComHistorico) dadoComHistorico).getHistorico());
     }
 }
