@@ -20,9 +20,9 @@ public class FonteDeDados{
         observadores.remove(obs);
     }
 
-    public void notificaObs(){
-        for(Observador obs : observadores){
-            obs.notifica();
+    public void notificaObs() {
+        for (Observador obs : observadores) {
+            obs.notificacaoRecebida(lst);
         }
     }
 
